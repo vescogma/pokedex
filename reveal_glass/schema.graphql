@@ -1,0 +1,56 @@
+"""Exposes a URL that specifies the behaviour of this scalar."""
+directive @specifiedBy(
+  """The URL that specifies the behaviour of this scalar."""
+  url: String!
+) on SCALAR
+
+type Base {
+  hp: Int
+  attack: Int
+  defense: Int
+  sp_attack: Int
+  sp_defense: Int
+  speed: Int
+}
+
+enum Language {
+  english
+  japanese
+  chinese
+  french
+}
+
+type Pokemon {
+  poke_id: Int
+  name: String
+  type: [String]
+  base: Base
+}
+
+type Query {
+  types: [Type]
+  pokemon(poke_id: Int, lang: Language): Pokemon
+  pokemons(limit: Int, page: Int, type: Type, lang: Language): [Pokemon]
+}
+
+enum Type {
+  Normal
+  Fighting
+  Flying
+  Poison
+  Ground
+  Rock
+  Bug
+  Ghost
+  Steel
+  Fire
+  Water
+  Grass
+  Electric
+  Psychic
+  Ice
+  Dragon
+  Dark
+  Fairy
+}
+
