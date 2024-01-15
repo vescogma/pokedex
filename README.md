@@ -1,5 +1,7 @@
 # pokedex
 
+use Node 16 😉
+
 ## client (Reveal Glass)
 ___
 
